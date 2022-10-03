@@ -1,0 +1,31 @@
+$main-bg: #FBF2CF;
+$main-color: #1C6758;
+
+$txt-main-color: #000;
+$txt-second-color: #1C6758;
+$txt-white: #FBF2CF;
+
+$btn-main-bg: $main-color;
+$btn-main-color: #FBF2CF;
+
+$header-height: 170px;
+$header-tablet-height: 70px;
+$header-mobile-height: 40px;
+$header-shrink-height: 70px;
+
+$box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+$colors: (
+    "green": #C6EBC5,
+    "orange": #fbb96b,
+    "pink": #fe7e73,
+    "white": #fff,
+    "black": #000,
+    "main": $main-color,
+    "red": #ff0000,
+);
+
+$mobile-width: 600px;
+$tablet-width: 1024px;
+ 
+$numbers: (1,2,3,4,5,6,7,8);

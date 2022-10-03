@@ -1,0 +1,20 @@
+//Dùng mixin với mong muốn vừa kế thừa từ class này lại vừa kế thừa từ 1 class khác
+
+@mixin flex($align-item, $justify-content) {
+    display: flex; //Kích hoạt flexbox
+    align-items: $align-item; //Căn chỉnh phần tử con
+    justify-content: $justify-content; //Căn chỉnh hàng (cột)
+}
+
+// mobile and tablet reponsive
+@mixin mobile {
+    @media only screen and (max-width: $mobile-width) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media only screen and (max-width: $tablet-width) {
+        @content;
+    }
+}
