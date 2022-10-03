@@ -7,15 +7,17 @@ import './User/assets/boxicons-2.0.7/css/boxicons.min.css'
 import './User/sass/index.scss'
 
 import Layout from './User/component/Layout';
+import App from './App';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
-      <Routes>
+      <App />
+      {/* <Routes>
         <Route path="/*" element={<Layout />} />
-      </Routes>
+      </Routes> */}
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
