@@ -1,15 +1,15 @@
 import React from "react";
 
-
+import HeroSlider from "../component/HeroSlider";
+import heroSliderData from "../assets/fake-data/hero-slider";
 
 const Home = () => {
   document.title = "Nụ Cười Sáng - Trang chủ";
 
   return (
-    // <Helmet title="Trang chủ">
-    //   Home
-    // </Helmet>
-    <div>Home</div>
+    <div>
+      <HeroSlider data={heroSliderData} />
+    </div>
   );
 };
 
