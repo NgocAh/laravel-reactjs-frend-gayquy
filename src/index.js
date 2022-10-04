@@ -2,11 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import './User/assets/boxicons-2.0.7/css/boxicons.min.css'
 import './User/sass/index.scss'
-
-import Layout from './User/component/Layout';
 import App from './App';
 
 
@@ -15,9 +13,6 @@ root.render(
   <React.StrictMode>
     <Router>
       <App />
-      {/* <Routes>
-        <Route path="/*" element={<Layout />} />
-      </Routes> */}
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
