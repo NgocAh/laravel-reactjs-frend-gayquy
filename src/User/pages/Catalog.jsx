@@ -4,14 +4,32 @@ import ProductCard from "../component/ProductCard";
 import Checkbox from "../component/Checkbox";
 
 import productData from "../assets/fake-data/products";
-import category from "../assets/fake-data/category";
+// import category from "../assets/fake-data/category";
 import size from "../assets/fake-data/product-size";
 import Button from "../component/Button";
 import InfinityList from "../component/InfinityList";
 
 const Catalog = () => {
   document.title = "Nụ Cười Sáng - Sản phẩm";
+//Category
+// const [categorylist, setCategorylist] = useState([]);
+// useEffect(() => {
+ 
+//   axios.get(`/api/view-category`).then((res) => {
+//     if (res.status === 200) {
+//       setCategorylist(res.data.category);
+//     }
+//   });
 
+// }, []);
+// const category =[];
+// category=categorylist.map((item)=>{
+
+//           display: {item.name},
+//           categorySlug: {item.slug},
+      
+// });
+//
 
   const initFilter = {
     category: [],
