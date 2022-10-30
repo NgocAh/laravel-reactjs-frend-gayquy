@@ -48,7 +48,7 @@ const Header = () => {
   const menuLeft = useRef(null)
 
   const menuToggle = () => menuLeft.current.classList.toggle("active")
-
+ 
   return (
     <div className="header" ref={headerRef}>
       <div className="container">

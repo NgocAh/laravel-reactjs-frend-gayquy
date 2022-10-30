@@ -1,23 +1,15 @@
 const size = [
     {
-        display: "S",
+        display: "Nhỏ",
         size: "s"
     },
     {
-        display: "M",
+        display: "Vừa",
         size: "m"
     },
     {
-        display: "L",
+        display: "Lớn",
         size: "l"
-    },
-    {
-        display: "XL",
-        size: "xl"
-    },
-    {
-        display: "XXL",
-        size: "xxl"
     },
 ]
 

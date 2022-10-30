@@ -1,8 +1,8 @@
-$main-bg: #B6E388;
-$main-color: #1C6758;
+$main-bg: #cde4ba;
+$main-color: #4E944F;
 
 $txt-main-color: #000;
-$txt-second-color: #1C6758;
+$txt-second-color: rgb(2, 43, 18);
 $txt-white: #FBF2CF;
 
 $btn-main-bg: $main-color;
@@ -16,13 +16,17 @@ $header-shrink-height: 70px;
 $box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
 $colors: (
-    "green": #C6EBC5,
+    "green": #83BD75,
     "orange": #F57328,
-    "pink": #fe7e73,
-    "white": #fff,
+    "pink": #FF7777,
+    "white": rgb(255, 255, 255),
     "black": #000,
     "main": $main-color,
     "red": #ff0000,
+    "blue": #628E90,
+    "densegreen": #4E944F,
+    "palegreen": #B4E197
+
 );
 
 $mobile-width: 600px;

@@ -93,6 +93,7 @@
                 transition: transform 0.5s ease;
             }
         }
+        // Dịch chuyển văn bản
 
         &.active &__info {
             &__title > span,
@@ -118,11 +119,13 @@
             }
 
             img {
-                height: 120vh;
+                height: 100vh;
                 position: absolute;
-                bottom: 0;
                 
+                bottom: 0;
                 right: 0;
+                border-radius: 60px/15px;
+                //Cho phép và điều khiển sự thay đổi vị trí của đối tượng
                 transform: scale(0) rotate(65deg);
                 transition: transform 0.5s
                     cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -134,7 +137,7 @@
             }
 
             .shape {
-                $size: 330px;
+                $size: 450px;
                 height: $size;
                 width: $size;
                 position: absolute;

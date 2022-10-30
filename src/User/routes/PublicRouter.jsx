@@ -17,11 +17,22 @@ import Product from '../pages/Product'
 // }
 
 const PublicRouter = [
+  
   { path: "/", component: Home },
   { path: "/catalog", component: Catalog },
   { path: "/cart", component: Cart },
   { path: "/catalog/:slug", component: Product },
+  
 ];
+
+// const PublicRouter = () => {
+//   return [
+//     { path: "/", component: Home },
+//     { path: "/catalog", component: Catalog },
+//     { path: "/cart", component: Cart },
+//     { path: "/catalog/:slug", component: Product },
+//   ];
+// };
 
 
 
