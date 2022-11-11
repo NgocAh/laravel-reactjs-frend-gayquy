@@ -6,6 +6,7 @@ import PublicRouter from "../routes/PublicRouter";
 import ProductViewModal from "./ProductViewModal";
 
 const Layout = () => {
+
   return (
     <div>
       <Header />

@@ -15,6 +15,7 @@ import banner from "../assets/images/banner.png";
 
 
 const Home = () => {
+
   document.title = "Nụ Cười Sáng - Trang chủ";
 
   return (

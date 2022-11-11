@@ -4,7 +4,7 @@ import ProductCard from "../component/ProductCard";
 import Checkbox from "../component/Checkbox";
 
 import productData from "../assets/fake-data/products";
-// import category from "../assets/fake-data/category";
+import category from "../assets/fake-data/category";
 import size from "../assets/fake-data/product-size";
 import Button from "../component/Button";
 import InfinityList from "../component/InfinityList";
