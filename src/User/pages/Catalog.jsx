@@ -8,35 +8,52 @@ import productData from "../assets/fake-data/products";
 import size from "../assets/fake-data/product-size";
 import Button from "../component/Button";
 import InfinityList from "../component/InfinityList";
+import axios from "axios";
 
 const Catalog = () => {
   document.title = "Nụ Cười Sáng - Sản phẩm";
-//Category
-// const [categorylist, setCategorylist] = useState([]);
-// useEffect(() => {
- 
-//   axios.get(`/api/view-category`).then((res) => {
-//     if (res.status === 200) {
-//       setCategorylist(res.data.category);
+const [categorylist, setCategorylist] = useState([]);
+var category=[];
+
+  useEffect(() => {
+            axios.get(`/api/view-category`).then((res) => {
+              if (res.status === 200) {
+                setCategorylist(res.data.category);
+                // const category =res.data.category;
+                  category=res.data.category;
+                  // console.log(category);
+              }
+            });
+          }, []);
+
+category=categorylist.map((item)=>{
+      return item;
+});
+
+//   const category = [
+//     {
+//         display: "Áo thun",
+//         categorySlug: "ao-thun"
+//     },
+//     {
+//         display: "Áo somi",
+//         categorySlug: "ao-somi"
+//     },
+//     {
+//         display: "Quần jean",
+//         categorySlug: "quan-jean"
 //     }
-//   });
+// ]
 
-// }, []);
-// const category =[];
-// category=categorylist.map((item)=>{
 
-//           display: {item.name},
-//           categorySlug: {item.slug},
-      
-// });
-//
 
+////
   const initFilter = {
     category: [],
     
     size: [],
   };
-  const productList = productData.getAllProducts();
+const productList = productData.getAllProducts();
 const [products, setProducts] = useState(productList);
  const [filter, setFilter] = useState(initFilter);
  const clearFilter = () => setFilter(initFilter);

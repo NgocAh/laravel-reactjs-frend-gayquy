@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./User/component/Layout";
+import axios from "axios";
 axios.defaults.baseURL = "http://localhost/laravel-react-backend/public";
 axios.defaults.headers.post["Content-Type"] = "application/json";
 axios.defaults.headers.post["Accept"] = "application/json";

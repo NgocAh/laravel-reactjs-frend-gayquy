@@ -7,9 +7,12 @@ import { useParams } from "react-router-dom";// importing the hook
 import ProductView from '../component/ProductView';
 
 import productData from '../assets/fake-data/products'
-
-
+import { useState } from 'react';
+import axios from 'axios';
+import { useEffect } from 'react';
 const Product = (props) => {
+
+  /////
   
   let params = useParams(); // calling the hook
   const product = productData.getProductBySlug(params.slug); // you'll be able to use params object this way now (omitting the 'prop.match' prefix)
