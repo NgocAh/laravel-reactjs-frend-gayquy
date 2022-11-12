@@ -43,12 +43,12 @@ const CartItem = props => {
       <div className="cart__item__image">
         <img src={`http://localhost/laravel-react-backend/public/${props.img01}`} alt="" />
       </div>
-      {/* <div className="cart__item__info">
-        <div className="cart__item__info__name">
+      <div className="cart__item__info">
+        {/* <div className="cart__item__info__name">
           <Link to={`/catalog/${item.slug}`}>
             {`${item.product.title}  - ${item.size}`}
           </Link>
-        </div>
+        </div> */}
         <div className="cart__item__info__price">
           {numberWithCommas(item.price)}
         </div>
@@ -74,7 +74,7 @@ const CartItem = props => {
         <div className="cart__item__del">
           <i className="bx bx-trash" onClick={() => removeCartItem()}></i>
         </div>
-      </div> */}
+      </div>
     </div>
    
   );
