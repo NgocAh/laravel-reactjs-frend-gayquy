@@ -41,9 +41,9 @@ const CartItem = props => {
   return (
     <div className="cart__item">
       <div className="cart__item__image">
-        <img src={item.product.image01} alt="" />
+        <img src={`http://localhost/laravel-react-backend/public/${props.img01}`} alt="" />
       </div>
-      <div className="cart__item__info">
+      {/* <div className="cart__item__info">
         <div className="cart__item__info__name">
           <Link to={`/catalog/${item.slug}`}>
             {`${item.product.title}  - ${item.size}`}
@@ -74,8 +74,9 @@ const CartItem = props => {
         <div className="cart__item__del">
           <i className="bx bx-trash" onClick={() => removeCartItem()}></i>
         </div>
-      </div>
+      </div> */}
     </div>
+   
   );
 }
 

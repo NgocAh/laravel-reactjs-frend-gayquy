@@ -63,6 +63,7 @@ const ProductViewModal = (props) => {
 
 
   const productSlug = useSelector((state) => state.productModal.value);
+
   const dispatch = useDispatch();
   const [product, setProduct] = useState(undefined);
 

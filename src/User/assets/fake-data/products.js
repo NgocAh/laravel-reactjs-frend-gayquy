@@ -264,31 +264,22 @@ const product_12_image_02 = require("../images/products/product-12 (2).png");
 
 
 
-
-
-
-
-
 ////call api
-  async function axiosTest() {
-    const response = await axios.get(`/api/view-product`)
-    localStorage.setItem('dataProduct', document.getElementById(response.data.products).value);
-    return response.data.products
-}
-const products2 =JSON.parse(localStorage.getItem('dataProduct'));
+//   async function axiosTest() {
+//     const response = await axios.get(`/api/view-product`)
+    
+//     localStorage.setItem('dataProduct',JSON.stringify(response.data.products))
+//     return response.data.products
+// }
+// const products2 =JSON.parse(localStorage.getItem('dataProduct'));
 
-axiosTest();
+// axiosTest()
 
-console.log(products2);
-const products=products2;
-
-
-
-
-
-
+// console.log('p',products2);
+const products=[];
 
 /////////
+
 const getAllProducts = () => products;
 
 const getProducts = (count) => {
