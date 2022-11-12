@@ -5,12 +5,15 @@ import Grid from '../component/Grid';
 import ProductCard from '../component/ProductCard';
 import { useParams } from "react-router-dom";// importing the hook
 import ProductView from '../component/ProductView';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 import productData from '../assets/fake-data/products'
+import axios from 'axios';
 
 
 const Product = (props) => {
-  
+ 
   let params = useParams(); // calling the hook
   const product = productData.getProductBySlug(params.slug); // you'll be able to use params object this way now (omitting the 'prop.match' prefix)
   document.title = product.title;

@@ -4,34 +4,84 @@ import ProductCard from "../component/ProductCard";
 import Checkbox from "../component/Checkbox";
 import InfinityList from "../component/InfinityList";
 
-import productData from "../assets/fake-data/products";
-import category from "../assets/fake-data/category";
+// import productData from "../assets/fake-data/products";
+// import category from "../assets/fake-data/category";
 import size from "../assets/fake-data/product-size";
 import Button from "../component/Button";
+import axios from "axios";
 
 
 
 const Catalog = () => {
   document.title = "Nụ Cười Sáng - Sản phẩm";
-//Category
-// const [categorylist, setCategorylist] = useState([]);
-// useEffect(() => {
- 
-//   axios.get(`/api/view-category`).then((res) => {
-//     if (res.status === 200) {
-//       setCategorylist(res.data.category);
-//     }
-//   });
+  ////
+   const [produclist, setproductlist] = useState([]);
 
-// }, []);
-// const category =[];
-// category=categorylist.map((item)=>{
+  var products1=[];
+    useEffect(() => {
+      axios.get(`/api/view-product`).then((res) => {
+        if (res.status === 200) {
+          setproductlist(res.data.products);
+        }
+      });
+    }, []);
+  
+    products1=produclist.map((item)=>{
+        return item;
+  }); 
+  
+    const getAllProducts = () => products1;
+  
+    const getProducts = (count) => {
+      const max = products1.length - count;
+      const min = 0;
+      const start = Math.floor(Math.random() * (max - min) + min);
+      return products1.slice(start, start + count);
+    };
+    
+    const getProductBySlug = (slug) => products1.find((e) => e.slug === slug);
+    
+    const getCartItemsInfo = (cartItems) => {
+      let res = [];
+      if (cartItems.length > 0) {
+        cartItems.forEach((e) => {
+          let product = getProductBySlug(e.slug);
+          res.push({
+            ...e,
+            product: product,
+          });
+        });
+      }
+      // console.log(res)
+      // console.log('sorted')
+      // console.log(res.sort((a, b) => a.slug > b.slug ? 1 : (a.slug < b.slug ? -1 : 0)))
+      return res.sort((a, b) => (a.id > b.id ? 1 : a.id < b.id ? -1 : 0));
+    };
+    
+    const productData = {
+      getAllProducts,
+      getProducts,
+      getProductBySlug,
+      getCartItemsInfo,
+    };
+  ///
+const [categorylist, setCategorylist] = useState([]);
+var category=[];
 
-//           display: {item.name},
-//           categorySlug: {item.slug},
-      
-// });
-//
+  useEffect(() => {
+            axios.get(`/api/view-category`).then((res) => {
+              if (res.status === 200) {
+                setCategorylist(res.data.category);
+                // const category =res.data.category;
+                  category=res.data.category;
+                  // console.log(category);
+              }
+            });
+          }, []);
+
+category=categorylist.map((item)=>{
+      return item;
+});
 
   const initFilter = {
     category: [],

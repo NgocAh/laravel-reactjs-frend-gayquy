@@ -6,12 +6,62 @@ import Button from "../component/Button";
 import Sspayment from "../component/Sspayment";
 import numberWithCommas from "../utils/numberWithCommas";
 import Checkbox from "../component/Checkbox";
+import axios from "axios";
 
-import productData from "../assets/fake-data/products";
+// import productData from "../assets/fake-data/products";
 
 const Checkout = () => {
   document.title = "Thanh toán";
+///
+const [produclist, setproductlist] = useState([]);
 
+  var products=[];
+    useEffect(() => {
+      axios.get(`/api/view-product`).then((res) => {
+        if (res.status === 200) {
+          setproductlist(res.data.products);
+        }
+      });
+    }, []);
+  
+    products=produclist.map((item)=>{
+        return item;
+  }); 
+ 
+    const getAllProducts = () => products;
+  
+    const getProducts = (count) => {
+      const max = products.length - count;
+      const min = 0;
+      const start = Math.floor(Math.random() * (max - min) + min);
+      return products.slice(start, start + count);
+    };
+    
+    const getProductBySlug = (slug) => products.find((e) => e.slug === slug);
+    
+    const getCartItemsInfo = (cartItems) => {
+      let res = [];
+      if (cartItems.length > 0) {
+        cartItems.forEach((e) => {
+          let product = getProductBySlug(e.slug);
+          res.push({
+            ...e,
+            product: product,
+          });
+        });
+      }
+      // console.log(res)
+      // console.log('sorted')
+      // console.log(res.sort((a, b) => a.slug > b.slug ? 1 : (a.slug < b.slug ? -1 : 0)))
+      return res.sort((a, b) => (a.id > b.id ? 1 : a.id < b.id ? -1 : 0));
+    };
+    console.log(products)
+    const productData = {
+      getAllProducts,
+      getProducts,
+      getProductBySlug,
+      getCartItemsInfo,
+    };
   // const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cartItems.value);
   const [totalPrice, setTotalPrice] = useState(0);

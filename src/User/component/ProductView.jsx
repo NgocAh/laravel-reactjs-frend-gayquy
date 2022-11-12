@@ -6,7 +6,8 @@ import { addItem } from "../redux/shopping-cart/cartItemsSlide";
 import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 import numberWithCommas from "../utils/numberWithCommas";
-import swal from "sweetalert2";
+// import swal from "sweetalert2";
+import swal from "sweetalert";
 
 const ProductView = (props) => {
   const dispatch = useDispatch();
@@ -101,13 +102,13 @@ const ProductView = (props) => {
             className="product__images__list__item"
             onClick={() => setPreviewImg(product.image01)}
           >
-            <img src={product.image01} alt="" />
+            <img src={`http://localhost/laravel-react-backend/public/${product.image01}`} alt="" />
           </div>
           <div
             className="product__images__list__item"
             onClick={() => setPreviewImg(product.image02)}
           >
-            <img src={product.image02} alt="" />
+            <img src={`http://localhost/laravel-react-backend/public/${product.image02}`} alt="" />
           </div>
         </div>
         <div className="product__images__main">
