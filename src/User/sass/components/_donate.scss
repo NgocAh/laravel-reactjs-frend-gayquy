@@ -1,0 +1,36 @@
+    
+.Donate {
+  padding: 2rem;
+  background: #cde4ba;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 499px) {
+  .Donate {
+    height: 100vh;
+  }
+}
+
+@media (min-width: 576px) {
+  .Donate {
+    max-width: 35rem;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .Donate {
+    max-height: 45rem;
+    max-width: 61rem;
+    border-radius: 1rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1200px) {
+  .Donate {
+    max-width: 70rem;
+  }
+}

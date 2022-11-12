@@ -80,7 +80,9 @@ const Header = () => {
           </div>
           <div className="header__menu__right">
             <div className="header__menu__item header__menu__right__item">
-              <i className="bx bx-donate-heart"></i>
+              <Link to="/donate">
+                <i className="bx bx-donate-heart"></i>
+              </Link>
             </div>
             <div className="header__menu__item header__menu__right__item">
               <i className="bx bx-search"></i>
@@ -96,7 +98,6 @@ const Header = () => {
               <Link to="/login">
                 <i className="bx bx-user"></i>
               </Link>
-              
             </div>
           </div>
         </div>

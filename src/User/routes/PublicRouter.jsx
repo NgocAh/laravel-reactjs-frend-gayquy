@@ -3,6 +3,8 @@ import Home from '../pages/Home'
 import Catalog from '../pages/Catalog'
 import Cart from '../pages/Cart'
 import Product from '../pages/Product'
+import Checkout from '../pages/Checkout'
+import Donate from '../pages/Donate'
 
 
 // const Router = () => {
@@ -17,12 +19,12 @@ import Product from '../pages/Product'
 // }
 
 const PublicRouter = [
-  
   { path: "/", component: Home },
   { path: "/catalog", component: Catalog },
   { path: "/cart", component: Cart },
   { path: "/catalog/:slug", component: Product },
-  
+  { path: "/checkout", component: Checkout },
+  { path: "/donate", component: Donate },
 ];
 
 // const PublicRouter = () => {

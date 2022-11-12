@@ -1,6 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
+import {createContext} from 'react'
+
+
 
 const items = localStorage.getItem('cartItems') !== null ? JSON.parse(localStorage.getItem('cartItems')) : []
+
+
 
 const initialState = {
     value: items,
@@ -30,8 +35,7 @@ export const cartItemsSlice = createSlice({
                     id: state.value.length > 0 ? state.value[state.value.length - 1].id + 1 : 1
                 }]
             }
-            // localStorage.setItem('cartItems', JSON.stringify(state.value.sort((a, b) => a.id > b.id ? 1 : (a.id < b.id ? -1 : 0))))
-            localStorage.setItem('cartItems', JSON.stringify(sortItems(state.value)))
+            localStorage.setItem('cartItems', JSON.stringify(sortItems(state.value))) //(key,value)
             console.log(state.value);
         },
         updateItem: (state, action) => {
@@ -47,7 +51,7 @@ export const cartItemsSlice = createSlice({
                     // price: newItem.price,
                     // quantity: newItem.quantity
                 }]
-                localStorage.setItem('cartItems', JSON.stringify(sortItems(state.value)))
+                localStorage.setItem('cartItems', JSON.stringify(sortItems(state.value)))// Chuyển Object thành string
             }
         
             
@@ -58,7 +62,9 @@ export const cartItemsSlice = createSlice({
             state.value = delItem(state.value, item)
             localStorage.setItem('cartItems', JSON.stringify(sortItems(state.value)))
         },
+       
     }
+    
 })
 
 // Action creators are generated for each case reducer function

@@ -50,15 +50,3 @@ const Product = (props) => {
 
 export default Product;
 
-// import React from 'react'
-
-// import productData from "../assets/fake-data/products";
-
-// const Product = props => {
-//   // const product = productData.getProductBySlug(props.match.params.slug);
-//   return (
-//     <div>Product</div>
-//   )
-// }
-
-// export default Product
