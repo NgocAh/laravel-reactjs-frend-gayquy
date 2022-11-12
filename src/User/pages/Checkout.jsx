@@ -55,7 +55,7 @@ const [produclist, setproductlist] = useState([]);
       // console.log(res.sort((a, b) => a.slug > b.slug ? 1 : (a.slug < b.slug ? -1 : 0)))
       return res.sort((a, b) => (a.id > b.id ? 1 : a.id < b.id ? -1 : 0));
     };
-    console.log(products)
+    // console.log(products)
     const productData = {
       getAllProducts,
       getProducts,

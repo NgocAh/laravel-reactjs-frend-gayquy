@@ -24,12 +24,12 @@ const Catalog = () => {
           setproductlist(res.data.products);
         }
       });
+    console.log("al")
     }, []);
   
-    products1=produclist.map((item)=>{
+    products1 = produclist.map((item)=>{
         return item;
   }); 
-  
     const getAllProducts = () => products1;
   
     const getProducts = (count) => {
@@ -57,14 +57,18 @@ const Catalog = () => {
       // console.log(res.sort((a, b) => a.slug > b.slug ? 1 : (a.slug < b.slug ? -1 : 0)))
       return res.sort((a, b) => (a.id > b.id ? 1 : a.id < b.id ? -1 : 0));
     };
-    
+
+
     const productData = {
       getAllProducts,
       getProducts,
       getProductBySlug,
       getCartItemsInfo,
     };
-  ///
+
+   
+
+//   ///
 const [categorylist, setCategorylist] = useState([]);
 var category=[];
 
