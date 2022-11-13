@@ -9,11 +9,9 @@ import productData from '../assets/fake-data/products'
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cartItems.value);
-  
   const [cartProducts, setCartProducts] = useState(productData.getCartItemsInfo(cartItems))
   const [totalProducts, setTotalProducts] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
-
   useEffect(() => {
         setCartProducts(productData.getCartItemsInfo(cartItems))
         setTotalPrice(cartItems.reduce((total, item) => total + (Number(item.quantity) * Number(item.price)), 0))
