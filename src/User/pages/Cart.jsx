@@ -12,8 +12,6 @@ const Cart = () => {
 
   const [produclist, setproductlist] = useState([]);
   var products1=[];
-
-
     useEffect(() => {
       axios.get(`/api/view-product`).then((res) => {
         if (res.status === 200) {
@@ -61,7 +59,7 @@ const Cart = () => {
   const [cartProducts, setCartProducts] = useState(productData.getCartItemsInfo(cartItems))
   const [totalProducts, setTotalProducts] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
-
+  console.log(productData.getCartItemsInfo(cartItems))
   useEffect(() => {
         setCartProducts(productData.getCartItemsInfo(cartItems))
         setTotalPrice(cartItems.reduce((total, item) => total + (Number(item.quantity) * Number(item.price)), 0))
