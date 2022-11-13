@@ -68,7 +68,8 @@ const Cart = () => {
         setTotalProducts(cartItems.reduce((total, item) => total + Number(item.quantity), 0))
     }, [cartItems])
     document.title = "Giỏ hàng";
-   
+
+
   return (
     <div className="cart">
       <div className="cart__info">
