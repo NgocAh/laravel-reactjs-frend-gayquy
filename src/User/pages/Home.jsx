@@ -17,6 +17,7 @@ const Home = () => {
   document.title = "Nụ Cười Sáng - Trang chủ";
 
   const [produclist, setproductlist] = useState([]);
+  const [sldierlist, setsliderlist] = useState([]);
 
   var products=[];
     useEffect(() => {
@@ -25,11 +26,15 @@ const Home = () => {
           setproductlist(res.data.products);
         }
       });
+      axios.get(`/api/view-slider`)
+      .then((res) => {
+        if (res.status === 200) {
+          setsliderlist(res.data.sliders);
+        }
+      });
     }, []);
-  
-    products=produclist.map((item)=>{
-        return item;
-  }); 
+    const heroSliderData=sldierlist
+    products=produclist
  
     const getAllProducts = () => products;
   

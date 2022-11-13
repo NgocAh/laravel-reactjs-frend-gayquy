@@ -10,36 +10,44 @@ import size from "../assets/fake-data/product-size";
 import Button from "../component/Button";
 import axios from "axios";
 
-
-
 const Catalog = () => {
   document.title = "Nụ Cười Sáng - Sản phẩm";
-  ////
-   const [produclist, setproductlist] = useState([]);
 
+// //  category
+const [categorylist, setCategorylist] = useState([]);
+var category=[];
+
+  useEffect(() => {
+            axios.get(`/api/view-category`).then((res) => {
+              if (res.status === 200) {
+                setCategorylist(res.data.category);
+              }
+            });
+          }, []);
+
+category=categorylist;
+///product
+const [produclist, setproductlist] = useState([]);
   var products1=[];
+
+
     useEffect(() => {
       axios.get(`/api/view-product`).then((res) => {
         if (res.status === 200) {
           setproductlist(res.data.products);
         }
       });
-    console.log("al")
+    
     }, []);
-  
-    products1 = produclist.map((item)=>{
-        return item;
-  }); 
+    products1=produclist
     const getAllProducts = () => products1;
-  
     const getProducts = (count) => {
       const max = products1.length - count;
       const min = 0;
       const start = Math.floor(Math.random() * (max - min) + min);
       return products1.slice(start, start + count);
     };
-    
-    const getProductBySlug = (slug) => products1.find((e) => e.slug === slug);
+        const getProductBySlug = (slug) => products1.find((e) => e.slug === slug);
     
     const getCartItemsInfo = (cartItems) => {
       let res = [];
@@ -57,35 +65,14 @@ const Catalog = () => {
       // console.log(res.sort((a, b) => a.slug > b.slug ? 1 : (a.slug < b.slug ? -1 : 0)))
       return res.sort((a, b) => (a.id > b.id ? 1 : a.id < b.id ? -1 : 0));
     };
-
-
-    const productData = {
+      const productData = {
       getAllProducts,
       getProducts,
       getProductBySlug,
       getCartItemsInfo,
     };
 
-   
 
-//   ///
-const [categorylist, setCategorylist] = useState([]);
-var category=[];
-
-  useEffect(() => {
-            axios.get(`/api/view-category`).then((res) => {
-              if (res.status === 200) {
-                setCategorylist(res.data.category);
-                // const category =res.data.category;
-                  category=res.data.category;
-                  // console.log(category);
-              }
-            });
-          }, []);
-
-category=categorylist.map((item)=>{
-      return item;
-});
 
   const initFilter = {
     category: [],
@@ -96,6 +83,10 @@ category=categorylist.map((item)=>{
 const [products, setProducts] = useState(productList);
  const [filter, setFilter] = useState(initFilter);
  const clearFilter = () => setFilter(initFilter);
+///
+   
+
+
     const filterSelect = (type, checked, item) => {
       if (checked) {
         switch (type) {

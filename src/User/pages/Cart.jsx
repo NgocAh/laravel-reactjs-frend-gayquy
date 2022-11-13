@@ -11,30 +11,26 @@ import axios from 'axios';
 const Cart = () => {
 
   const [produclist, setproductlist] = useState([]);
+  var products1=[];
 
-  var products=[];
+
     useEffect(() => {
       axios.get(`/api/view-product`).then((res) => {
         if (res.status === 200) {
           setproductlist(res.data.products);
         }
       });
+    
     }, []);
-  
-    products=produclist.map((item)=>{
-        return item;
-  }); 
- 
-    const getAllProducts = () => products;
-  
+    products1=produclist
+    const getAllProducts = () => products1;
     const getProducts = (count) => {
-      const max = products.length - count;
+      const max = products1.length - count;
       const min = 0;
       const start = Math.floor(Math.random() * (max - min) + min);
-      return products.slice(start, start + count);
+      return products1.slice(start, start + count);
     };
-    
-    const getProductBySlug = (slug) => products.find((e) => e.slug === slug);
+        const getProductBySlug = (slug) => products1.find((e) => e.slug === slug);
     
     const getCartItemsInfo = (cartItems) => {
       let res = [];
@@ -52,8 +48,7 @@ const Cart = () => {
       // console.log(res.sort((a, b) => a.slug > b.slug ? 1 : (a.slug < b.slug ? -1 : 0)))
       return res.sort((a, b) => (a.id > b.id ? 1 : a.id < b.id ? -1 : 0));
     };
-    // console.log(products)
-    const productData = {
+      const productData = {
       getAllProducts,
       getProducts,
       getProductBySlug,
@@ -73,6 +68,7 @@ const Cart = () => {
         setTotalProducts(cartItems.reduce((total, item) => total + Number(item.quantity), 0))
     }, [cartItems])
     document.title = "Giỏ hàng";
+   
   return (
     <div className="cart">
       <div className="cart__info">

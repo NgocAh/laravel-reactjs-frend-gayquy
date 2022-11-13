@@ -30,8 +30,6 @@ const CartItem = props => {
           })
         );
       }
-
- 
 }
 
   const removeCartItem = () => {
@@ -41,7 +39,7 @@ const CartItem = props => {
   return (
     <div className="cart__item">
       <div className="cart__item__image">
-        <img src={`http://localhost/laravel-react-backend/public/${props.img01}`} alt="" />
+        <img src="" alt="" />
       </div>
       <div className="cart__item__info">
 

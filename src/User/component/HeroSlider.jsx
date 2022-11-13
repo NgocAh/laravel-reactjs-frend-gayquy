@@ -84,7 +84,7 @@ const HeroSliderItem = (props) => (
           backgroundColor={props.item.color}
           icon="bx bx-cart"
           animate={true}
-          
+        
           >
             Xem chi tiết
           </Button>
@@ -94,7 +94,7 @@ const HeroSliderItem = (props) => (
 
     <div className="hero-slider__item__image">
       <div className={`shape bg-${props.item.color}`}></div>
-      <img src={props.item.img} alt="" />
+      <img src={`http://localhost/laravel-react-backend/public/${props.item.img}`} alt="" />
     </div>
   </div>
 );
