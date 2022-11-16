@@ -68,12 +68,14 @@ const Cart = () => {
     }, [cartItems])
     var danhsachsp="";
     const danhsach = productData.getCartItemsInfo(cartItems);
+
     if(productData.getCartItemsInfo(cartItems)[0].product)
     {
       danhsachsp=danhsach.map((item, index) => (
         <CartItem item={item} key={index} />
       ))
     }
+
 
     document.title = "Giỏ hàng";
   return (

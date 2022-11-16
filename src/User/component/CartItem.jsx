@@ -16,7 +16,7 @@ const CartItem = props => {
     setItem(props.item);
     setQuantity(props.item.quantity);
   }, [props.item]);
-
+  
   const updateQuantity = (opt) =>{
     if (opt === "+") {
       dispatch(updateItem({ ...item, quantity: quantity + 1 }));
