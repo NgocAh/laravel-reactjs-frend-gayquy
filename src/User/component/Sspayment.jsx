@@ -19,7 +19,7 @@ const Sspayment = (props) => {
             <div className="product-thumbnail-wrapper">
               <img
                 // className="product-thumbnail-image"
-                src={item.product.image01}
+                src={`http://localhost/laravel-react-backend/public/${item.product.image01}`}
                 alt=""
               />
             </div>

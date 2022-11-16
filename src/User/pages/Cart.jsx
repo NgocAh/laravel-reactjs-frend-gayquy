@@ -11,6 +11,7 @@ import axios from 'axios';
 const Cart = () => {
 
   const [produclist, setproductlist] = useState([]);
+  
   var products1=[];
     useEffect(() => {
       axios.get(`/api/view-product`).then((res) => {
@@ -53,21 +54,28 @@ const Cart = () => {
       getCartItemsInfo,
     };
 
-
-  const cartItems = useSelector((state) => state.cartItems.value);
+    const cartItems = useSelector((state) => state.cartItems.value);
+    const [cartProducts, setCartProducts] = useState(productData.getCartItemsInfo(cartItems))
+    const [totalProducts, setTotalProducts] = useState(0);
+    const [totalPrice, setTotalPrice] = useState(0);
+    
+    
   
-  const [cartProducts, setCartProducts] = useState(productData.getCartItemsInfo(cartItems))
-  const [totalProducts, setTotalProducts] = useState(0);
-  const [totalPrice, setTotalPrice] = useState(0);
-  console.log(productData.getCartItemsInfo(cartItems))
   useEffect(() => {
         setCartProducts(productData.getCartItemsInfo(cartItems))
         setTotalPrice(cartItems.reduce((total, item) => total + (Number(item.quantity) * Number(item.price)), 0))
         setTotalProducts(cartItems.reduce((total, item) => total + Number(item.quantity), 0))
     }, [cartItems])
+    var danhsachsp="";
+    const danhsach = productData.getCartItemsInfo(cartItems);
+    if(productData.getCartItemsInfo(cartItems)[0].product)
+    {
+      danhsachsp=danhsach.map((item, index) => (
+        <CartItem item={item} key={index} />
+      ))
+    }
+
     document.title = "Giỏ hàng";
-
-
   return (
     <div className="cart">
       <div className="cart__info">
@@ -96,9 +104,7 @@ const Cart = () => {
       </div>
       {/* Danh sách product */}
       <div className="cart__list">
-        {cartProducts.map((item, index) => (
-          <CartItem item={item} key={index} />
-        ))}
+        {danhsachsp}
       </div>
     </div>
   );

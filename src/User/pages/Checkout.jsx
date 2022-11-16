@@ -68,7 +68,6 @@ const [produclist, setproductlist] = useState([]);
   const [cartProducts, setCartProducts] = useState(
     productData.getCartItemsInfo(cartItems)
   );
-
   useEffect(() => {
     setCartProducts(productData.getCartItemsInfo(cartItems));
     setTotalPrice(
@@ -79,6 +78,14 @@ const [produclist, setproductlist] = useState([]);
     );
   }, [cartItems]);
 
+  var danhsachsp="";
+  const danhsach = productData.getCartItemsInfo(cartItems);
+  if(productData.getCartItemsInfo(cartItems)[0].product)
+  {
+    danhsachsp=danhsach.map((item, index) => (
+      <Sspayment item={item} key={index} />
+    ))
+  }
   const [fullname, setFullname] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -469,9 +476,10 @@ const [produclist, setproductlist] = useState([]);
                   data-order-summary-section="line-items"
                 >
                   <table className="product-table">
-                    {cartProducts.map((item, index) => (
+                    {/* {cartProducts.map((item, index) => (
                       <Sspayment item={item} key={index} />
-                    ))}
+                    ))} */}
+                    {danhsachsp}
                   </table>
                 </div>
                 <div
