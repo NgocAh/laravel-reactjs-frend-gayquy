@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Button from "../component/Button";
@@ -391,23 +391,6 @@ const [produclist, setproductlist] = useState([]);
                               </label>
                             </div>
 
-                            <div
-                              className="radio-wrapper content-box-row content-box-row-secondary"
-                              for="payment_method_id_1002909122"
-                            >
-                              <div className="blank-slate">
-                                Nụ Cười Sáng nhận chuyển khoản qua:
-                              </div>
-                              <div className="blank-slate">
-                                - STK:16610000084260 Ngân Hàng BIDV Chi nhánh
-                                Thủ Thiêm - TRAN THI NGOC ANH -
-                              </div>
-                              <div className="blank-slate">
-                                - MOMO : 0941402932 - TRAN THI NGOC ANH
-                              </div>
-                          
-                            </div>
-
                             <div className="radio-wrapper content-box-row">
                               <label
                                 className="radio-label"
@@ -438,6 +421,21 @@ const [produclist, setproductlist] = useState([]);
                                     <span className="quick-tagline  hidden ">
                                       Buy Now, Pay Later
                                     </span>
+                                  </div>
+                                </div>
+                                <div
+                                  className="radio-wrapper content-box-row content-box-row-secondary"
+                                  for="payment_method_id_1002909122"
+                                >
+                                  <div className="blank-slate">
+                                    Nụ Cười Sáng nhận chuyển khoản qua:
+                                  </div>
+                                  <div className="blank-slate">
+                                    - STK:16610000084260 Ngân Hàng BIDV Chi
+                                    nhánh Thủ Thiêm - TRAN THI NGOC ANH -
+                                  </div>
+                                  <div className="blank-slate">
+                                    - MOMO : 0941402932 - TRAN THI NGOC ANH
                                   </div>
                                 </div>
                               </label>

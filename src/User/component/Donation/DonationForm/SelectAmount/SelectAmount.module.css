@@ -1,14 +1,18 @@
 .SelectAmount {
   margin-top: 3rem;
+
 }
 
 .Title {
   color: #000;
-  padding-bottom: 0.8rem;
+  padding-bottom: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .Amounts {
+  position: relative;
   display: grid;
+  border: none;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   row-gap: 1.6rem;
   margin-top: 0.5rem;
@@ -16,14 +20,30 @@
 
 .Radio {
   display: none;
+
 }
+
 .RadioWrapper {
   margin-right: 0.5rem;
 }
-
+.RadioWrapper__MoneyOrther{
+  position: absolute;
+  margin-right: 0.5rem;
+  top: 30px;
+  right: 10px;
+}
+.Radio__MoneyOrther{
+   display: block;
+    padding: 1rem;
+  border: 1.5px solid #83BD75;
+  background: #B4E197;
+  color: #000;
+  border-radius: 3px;
+}
 .Radio:checked + label {
   background-color: #000;
   color: #4E944F;
+  font-size: 1.1rem;
 }
 
 .Radio + label {
@@ -41,6 +61,21 @@
   background-color: #cde4ba;
   color: #000;
 }
+/* .MonneyInput{
+  padding: 1rem;
+  border: 1.5px solid #83BD75;
+  background: #B4E197;
+  
+  border-radius: 3px;
+  float: right;
+  
+  width: 145px;
+}
+.MonneyInput::after{
+      content: " ";
+    display: table;
+    clear: both;
+} */
 
 @media (min-width: 499px) {
   .Amounts {

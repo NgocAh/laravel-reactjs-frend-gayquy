@@ -6,8 +6,8 @@ import { addItem } from "../redux/shopping-cart/cartItemsSlide";
 import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 import numberWithCommas from "../utils/numberWithCommas";
-// import swal from "sweetalert2";
-import swal from "sweetalert";
+import swal from "sweetalert2";
+// import swal from "sweetalert";
 
 const ProductView = (props) => {
   const dispatch = useDispatch();

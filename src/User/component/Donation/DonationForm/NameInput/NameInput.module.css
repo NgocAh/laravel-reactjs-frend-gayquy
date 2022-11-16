@@ -7,15 +7,19 @@
 }
 .NameInputWrapper label {
   color: #000;
+  padding-top: 1.5rem;
   padding-bottom: 0.8rem;
+  
 }
 
 .NameInput {
   padding: 1rem;
-  border: 1.5px solid var(--dark-blue);
-  background: var(--medium-blue);
+  border: 1.5px solid #83BD75;
+  background: #B4E197;
   color: #000;
   border-radius: 3px;
+  
+  
 }
 
 .NameInput::placeholder {
@@ -24,7 +28,7 @@
 }
 
 .NameInputWrapper a {
-  margin-top: 1rem;
-  color: #000;
+  margin-top: 1.5rem;
+  color: #09303f;
   text-decoration: none;
 }

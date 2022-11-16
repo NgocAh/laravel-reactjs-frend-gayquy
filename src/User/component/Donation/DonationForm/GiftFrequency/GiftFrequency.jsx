@@ -4,7 +4,7 @@ const GiftFrequency = () => {
   return (
     <div className={classes.GiftFrequency}>
       <header className={classes.Title}>
-        <h4>Gift frequency</h4>
+        <h4>Tần suất hỗ trợ</h4>
       </header>
       <fieldset className={classes.Frequency}>
         <div className={classes.RadioWrapper}>
@@ -15,7 +15,7 @@ const GiftFrequency = () => {
             name='Frequency'
             defaultChecked
           />
-          <label htmlFor='monthly'>Monthly</label>
+          <label htmlFor='monthly'>MỖI THÁNG</label>
         </div>
         <div className={classes.RadioWrapper}>
           <input
@@ -24,7 +24,7 @@ const GiftFrequency = () => {
             id='one-time'
             name='Frequency'
           />
-          <label htmlFor='one-time'>One time</label>
+          <label htmlFor='one-time'>MỘT LẦN</label>
         </div>
       </fieldset>
     </div>

@@ -1,12 +1,20 @@
 .HelpUs {
-  color: var(--white);
+  color: #000;
   flex: 1;
 }
 
-.HelpUsParagraph {
+.HelpUsParagraph1 {
   font-weight: 600;
   line-height: 1.7rem;
   text-align: justify;
+  padding-top: 1.5rem;
+}
+.HelpUsParagraph2{
+  color: rgb(67, 78, 71);
+  font-weight: 600;
+  line-height: 1.7rem;
+  text-align: justify;
+  padding-top: 3rem;
 }
 
 @media (min-width: 992px) {

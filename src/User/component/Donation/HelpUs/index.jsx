@@ -5,11 +5,22 @@ const HelpUs = () => {
   return (
     <section className={classes.HelpUs}>
       <HelpUsTitle />
-      <p className={classes.HelpUsParagraph}>
-        We'll get right to the point: we're asking you to support us. We're a
-        nonprofit that relies on support from people like you. If everyone
-        reading this gives $10 monthly, we can thrive for years.
+      <p className={classes.HelpUsParagraph1}>
+        Hướng đến mục tiêu mang lại giá trị tốt đẹp chong cộng đồng và xã hội. Hãy cùng Nụ Cười Sáng mang sức trẻ đi muôn nơi
+        tích cực hơn.
       </p>
+      <p className={classes.HelpUsParagraph2}>
+        Nụ Cười Sáng nhận chuyển khoản qua:
+         <p >
+        - STK:16610000084260 Ngân Hàng BIDV Chi nhánh Thủ Thiêm - TRAN THI NGOC
+        ANH
+      </p>
+      <p >
+        - MOMO : 0941402932 - TRAN THI NGOC ANH
+      </p>
+      </p>
+     
+  
     </section>
   );
 };
