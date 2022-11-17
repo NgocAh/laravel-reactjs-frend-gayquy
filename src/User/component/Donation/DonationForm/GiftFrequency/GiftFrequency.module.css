@@ -1,5 +1,6 @@
 .GiftFrequency {
   margin-top: 6rem;
+  
 }
 
 .Title {
@@ -16,6 +17,7 @@
   align-items: center;
   flex-wrap: wrap;
   max-width: 100%;
+  border: none;
 }
 
 .RadioWrapper {

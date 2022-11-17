@@ -2,7 +2,12 @@ import { useState } from "react";
 import classes from "./SelectAmount.module.css";
 
 const SelectAmount = () => {
+  const [monney100, set100] = useState("100");
+  const [monney200, set200] = useState("200");
+  const [monney500, set500] = useState("500");
+  const [monney1000, set1000] = useState("1000");
   const [moneyOrther, setMoneyOrther] = useState("");
+
   const [isMoneyOrther, setIsMoneyOrther] = useState(false);
   return (
     <div className={classes.SelectAmount}>
@@ -17,6 +22,8 @@ const SelectAmount = () => {
             type="radio"
             name="amount"
             id="100"
+            value={monney100}
+            onChange={(e) => set100(e.target.value)}
           />
           <label htmlFor="100">100</label>
         </div>
@@ -26,6 +33,8 @@ const SelectAmount = () => {
             type="radio"
             name="amount"
             id="200"
+            value={monney200}
+            onChange={(e) => set200(e.target.value)}
           />
           <label htmlFor="200">200</label>
         </div>
@@ -35,6 +44,8 @@ const SelectAmount = () => {
             type="radio"
             name="amount"
             id="500"
+            value={monney500}
+            onChange={(e) => set500(e.target.value)}
           />
           <label htmlFor="500">500</label>
         </div>
@@ -44,6 +55,8 @@ const SelectAmount = () => {
             type="radio"
             name="amount"
             id="1000"
+            value={monney1000}
+            onChange={(e) => set1000(e.target.value)}
           />
           <label htmlFor="1000">1000</label>
         </div>
@@ -72,13 +85,6 @@ const SelectAmount = () => {
         ) : (
           ""
         )}
-
-        {/* <input
-            className={classes.MonneyInput}
-            type="text"
-            id="monney-input"
-            placeholder="Nhập số tiền:"
-          /> */}
       </fieldset>
     </div>
   );

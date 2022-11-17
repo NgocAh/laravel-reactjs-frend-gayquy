@@ -5,10 +5,9 @@ import { Link } from "react-router-dom";
 import Button from "../component/Button";
 import Sspayment from "../component/Sspayment";
 import numberWithCommas from "../utils/numberWithCommas";
-import Checkbox from "../component/Checkbox";
 import axios from "axios";
 
-// import productData from "../assets/fake-data/products";
+
 
 const Checkout = () => {
   document.title = "Thanh toán";
