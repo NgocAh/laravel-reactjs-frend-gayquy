@@ -112,7 +112,7 @@ const ProductView = (props) => {
           </div>
         </div>
         <div className="product__images__main">
-          <img src={previewImg} alt="" />
+          <img src={`http://localhost/laravel-react-backend/public/${previewImg}`} alt="" />
         </div>
         <div
           className={`product-description ${descriptionExpand ? "expand" : ""}`}

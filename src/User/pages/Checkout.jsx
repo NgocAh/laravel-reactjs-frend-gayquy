@@ -6,6 +6,7 @@ import Button from "../component/Button";
 import Sspayment from "../component/Sspayment";
 import numberWithCommas from "../utils/numberWithCommas";
 import axios from "axios";
+import swal from "sweetalert2";
 
 
 
@@ -85,56 +86,140 @@ const [produclist, setproductlist] = useState([]);
       <Sspayment item={item} key={index} />
     ))
   }
-  const [fullname, setFullname] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
-  const [address, setAddress] = useState("");
-  const [note, setNote] = useState("");
+  // const [fullname, setFullname] = useState("");
+  // const [phone, setPhone] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [address, setAddress] = useState("");
+  // const [note, setNote] = useState("");
 
-  const [err1, setErr1] = useState("");
-  const [err2, setErr2] = useState("");
-  const [err3, setErr3] = useState("");
-  const [err4, setErr4] = useState("");
+  // const [err1, setErr1] = useState("");
+  // const [err2, setErr2] = useState("");
+  // const [err3, setErr3] = useState("");
+  // const [err4, setErr4] = useState("");
 
-  const [f1, setF1] = useState(false);
-  const [f2, setF2] = useState(false);
-  const [f3, setF3] = useState(false);
-  const [f4, setF4] = useState(false);
+  // const [f1, setF1] = useState(false);
+  // const [f2, setF2] = useState(false);
+  // const [f3, setF3] = useState(false);
+  // const [f4, setF4] = useState(false);
 
-  // const [cart] = value.cart;
-  const [total, setTotal] = useState(0);
+  // // const [cart] = value.cart;
+  // const [total, setTotal] = useState(0);
   const [priceall, setPriceall] = useState(0);
   const [priceShip, setPriceShip] = useState(30000);
-  const [auth, setAuth] = useState(true);
-  const [profile, setProfile] = useState();
+  // const [auth, setAuth] = useState(true);
+  // const [profile, setProfile] = useState();
 
   useEffect(() => {
     setPriceall(totalPrice + 30000);
   }, [totalPrice]);
 
-  useEffect(() => {
-    if (fullname === "" && f1) {
-      setErr1("Hãy nhập họ và tên");
-    } else {
-      setErr1("");
-    }
-  }, [f1, fullname]);
-  useEffect(() => {
-    if (phone === "" && f2) {
-      setErr2("Hãy nhập số điện thoại");
-    }
-  }, [f2, phone]);
-  useEffect(() => {
-    if (address === "" && f3) {
-      setErr3("Hãy nhập địa chỉ");
-    }
-  }, [address, f3]);
-  useEffect(() => {
-    if (email === "" && f4) {
-      setErr4("Hãy nhập email");
-    }
-  }, [email, f4]);
+  // useEffect(() => {
+  //   if (fullname === "" && f1) {
+  //     setErr1("Hãy nhập họ và tên");
+  //   } else {
+  //     setErr1("");
+  //   }
+  // }, [f1, fullname]);
+  // useEffect(() => {
+  //   if (phone === "" && f2) {
+  //     setErr2("Hãy nhập số điện thoại");
+  //   }
+  // }, [f2, phone]);
+  // useEffect(() => {
+  //   if (address === "" && f3) {
+  //     setErr3("Hãy nhập địa chỉ");
+  //   }
+  // }, [address, f3]);
+  // useEffect(() => {
+  //   if (email === "" && f4) {
+  //     setErr4("Hãy nhập email");
+  //   }
+  // }, [email, f4]);
+  const [errorlist, setError] = useState([]);
 
+  const [radioInput, setRadio]=useState({
+    payment_method_id: '',
+  });
+  const handleRadioInput = (e) => {
+    e.persist();
+    setRadio({...radioInput, [e.target.name]:e.target.value });
+  }
+  const [orderInput, setOrder] = useState({
+    name: '',
+    email: '',
+    number_phone: '',
+    address: '',
+    note: '',
+});
+const handleInput = (e) => {
+  e.persist();
+  setOrder({...orderInput, [e.target.name]:e.target.value });
+}
+// console.log('testitem',JSON.parse(localStorage.getItem('cartItems')))
+const test=JSON.parse(localStorage.getItem('cartItems'));
+// console.log(test)
+
+
+const submitOrder = (e) => {
+  e.preventDefault();
+  
+  const formData = new FormData();
+
+  formData.append('name', orderInput.name);
+  formData.append('email', orderInput.email);
+  formData.append('number_phone', orderInput.number_phone);
+
+  formData.append('address', orderInput.address);
+  formData.append('note', orderInput.note);
+  formData.append('items',JSON.stringify(test));
+  formData.append('method_payment',radioInput.payment_method_id)
+
+  axios.post(`/api/order`, formData).then(res=>{
+      if(res.data.status === 200)
+      {
+        swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Đặt hàng thành công',
+          showConfirmButton: false,
+          timer: 2500
+        })
+          console.log('thanh cong');
+          // swal("Success",res.data.massage,"success");
+      
+          setOrder({...orderInput, 
+            name: '',
+            email: '',
+            number_phone: '',
+            address: '',
+            note: '',
+          });
+      }
+      else if(res.data.status === 422)
+      {
+        // console.log('loi');
+        swal.fire({
+          position: 'top-end',
+          icon: 'error',
+          title: 'Kiểm tra lại thông tin đăt hàng',
+          showConfirmButton: false,
+          timer: 2500
+        })
+        setError(res.data.errors);
+
+      }
+      else if(res.data.status === 400)
+      {
+        swal.fire({
+          position: 'top-end',
+          icon: 'error',
+          title: 'Đặt hàng lỗi vui lòng thử lại sau',
+          showConfirmButton: false,
+          timer: 2500
+        })
+      }
+  });
+}
   return (
     <div className="row container1">
       <div className="col-md-6 col-sm-12 col-xs-12">
@@ -153,7 +238,7 @@ const [produclist, setproductlist] = useState([]);
                 Thông tin giao hàng
               </li>
             </ul>
-
+          <form onSubmit={submitOrder}  method="post" enctype="multipart/form-data">
             <div className="maincheckout-content">
               <div className="step">
                 <div className="step-sections steps-onepage" step="1">
@@ -176,13 +261,8 @@ const [produclist, setproductlist] = useState([]);
                               placeholder="Họ và tên"
                               type="text"
                               required
-                              onChange={(e) => {
-                                setFullname(e.target.value);
-                                setF1(true);
-                              }}
-                              value={fullname}
+                              name="name" onChange={handleInput} value={orderInput.name}
                             />
-                            <span>{err1}</span>
                           </div>
                         </div>
                         <div className="field  field-two-thirds  ">
@@ -203,14 +283,8 @@ const [produclist, setproductlist] = useState([]);
                               type="email"
                               id="checkout_user_email"
                               required
-                              name="email"
-                              onChange={(e) => {
-                                setEmail(e.target.value);
-                                setF4(true);
-                              }}
-                              value={email}
+                              name="email" onChange={handleInput} value={orderInput.email}
                             />
-                            <span>{err4}</span>
                           </div>
                         </div>
 
@@ -231,15 +305,9 @@ const [produclist, setproductlist] = useState([]);
                               size="30"
                               maxLength="15"
                               type="tel"
-                              id="billing_address_phone"
-                              name="phone"
-                              onChange={(e) => {
-                                setPhone(e.target.value);
-                                setF2(true);
-                              }}
-                              value={phone}
+                              name="number_phone"
+                              onChange={handleInput} value={orderInput.number_phone}
                             />
-                            <span>{err2}</span>
                           </div>
                         </div>
                       </div>
@@ -272,15 +340,10 @@ const [produclist, setproductlist] = useState([]);
                                 className="field-input"
                                 size="30"
                                 type="text"
-                                id="billing_address_address1"
-                                name="billing_address[address1]"
-                                onChange={(e) => {
-                                  setAddress(e.target.value);
-                                  setF3(true);
-                                }}
-                                value={address}
+                                name="address"
+                                onChange={handleInput} value={orderInput.address}
                               />
-                              <span>{err3}</span>
+<br></br>
                             </div>
                           </div>
                           <div
@@ -302,12 +365,8 @@ const [produclist, setproductlist] = useState([]);
                                 className="field-input"
                                 size="30"
                                 type="text"
-                                id="billing_address_address1"
-                                name="billing_address[address1]"
-                                onChange={(e) => {
-                                  setNote(e.target.value);
-                                }}
-                                value={note}
+                                name="note"
+                                onChange={handleInput} value={orderInput.note}
                               />
                             </div>
                           </div>
@@ -330,12 +389,12 @@ const [produclist, setproductlist] = useState([]);
                               >
                                 <div className="radio-input payment-method-checkbox">
                                   <input
-                                    type-id="1"
-                                    id="payment_method_id_1002766550"
                                     className="input-radio"
                                     name="payment_method_id"
                                     type="radio"
-                                    value="1002766550"
+                                    value="0"
+                                    onChange={handleRadioInput} 
+
                                     // checked=""
                                   />
                                 </div>
@@ -361,12 +420,12 @@ const [produclist, setproductlist] = useState([]);
                               >
                                 <div className="radio-input payment-method-checkbox">
                                   <input
-                                    type-id="2"
-                                    id="payment_method_id_1002909122"
                                     className="input-radio"
                                     name="payment_method_id"
                                     type="radio"
-                                    value="1002909122"
+                                    value="1"
+                                    onChange={handleRadioInput} 
+
                                     // checked=""
                                   />
                                 </div>
@@ -402,7 +461,9 @@ const [produclist, setproductlist] = useState([]);
                                     className="input-radio"
                                     name="payment_method_id"
                                     type="radio"
-                                    // value="1002971608"
+                                    value="2"
+                                    onChange={handleRadioInput} 
+
                                     // checked=""
                                   />
                                 </div>
@@ -422,7 +483,9 @@ const [produclist, setproductlist] = useState([]);
                                     </span>
                                   </div>
                                 </div>
-                                <div
+                                
+                              </label>
+                              <div
                                   className="radio-wrapper content-box-row content-box-row-secondary"
                                   for="payment_method_id_1002909122"
                                 >
@@ -437,7 +500,6 @@ const [produclist, setproductlist] = useState([]);
                                     - MOMO : 0941402932 - TRAN THI NGOC ANH
                                   </div>
                                 </div>
-                              </label>
                             </div>
                           </div>
                         </div>
@@ -458,6 +520,7 @@ const [produclist, setproductlist] = useState([]);
                 </div>
               </div>
             </div>
+            </form>
           </div>
         </div>
       </div>

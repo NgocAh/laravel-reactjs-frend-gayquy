@@ -86,6 +86,8 @@ const Header = () => {
             </div>
             <div className="header__menu__item header__menu__right__item">
               <i className="bx bx-search"></i>
+              <input type="text" placeholder="Search..." className="form-control" />
+                   
             </div>
 
             <div className="header__menu__item header__menu__right__item">
