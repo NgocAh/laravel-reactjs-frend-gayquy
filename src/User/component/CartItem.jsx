@@ -1,36 +1,36 @@
-import React, {useState,useEffect} from 'react'
-import PropTypes from 'prop-types'
+import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
-import {useDispatch} from "react-redux"
+import { useDispatch } from "react-redux";
 import { updateItem, removeItem } from "../redux/shopping-cart/cartItemsSlide";
 
-import numberWithCommas from '../utils/numberWithCommas'
-import { Link } from 'react-router-dom'
+import numberWithCommas from "../utils/numberWithCommas";
+import { Link } from "react-router-dom";
 //Danh sách các product trong cart
-const CartItem = props => {
-  const dispatch = useDispatch()
-  const [item, setItem] = useState(props.item)
-  const [quantity, setQuantity] = useState(props.item.quantity)
-    console.log('item',item)
+const CartItem = (props) => {
+  const dispatch = useDispatch();
+  const [item, setItem] = useState(props.item);
+  const [quantity, setQuantity] = useState(props.item.quantity);
+  console.log("item", item);
   useEffect(() => {
     setItem(props.item);
     setQuantity(props.item.quantity);
   }, [props.item]);
 
-  const updateQuantity = (opt) =>{
+  const updateQuantity = (opt) => {
     if (opt === "+") {
       dispatch(updateItem({ ...item, quantity: quantity + 1 }));
     }
-    
-      if (opt === "-") {
-        dispatch(
-          updateItem({
-            ...item,
-            quantity: quantity - 1 === 0 ? 1 : quantity - 1,
-          })
-        );
-      }
-}
+
+    if (opt === "-") {
+      dispatch(
+        updateItem({
+          ...item,
+          quantity: quantity - 1 === 0 ? 1 : quantity - 1,
+        })
+      );
+    }
+  };
 
   const removeCartItem = () => {
     dispatch(removeItem(item));
@@ -39,16 +39,18 @@ const CartItem = props => {
   return (
     <div className="cart__item">
       <div className="cart__item__image">
-        <img src={`http://localhost/laravel-react-backend/public/${item.product.image01}`} alt="" />
+        <img
+          src={`http://localhost/laravel-react-backend-gayquy/public/${item.product.image01}`}
+          alt=""
+        />
       </div>
       <div className="cart__item__info">
-
         <div className="cart__item__info__name">
           <Link to={`/catalog/${item.slug}`}>
             {`${item.product.title} - ${item.size}`}
           </Link>
         </div>
-        
+
         <div className="cart__item__info__price">
           {numberWithCommas(item.price)}
         </div>
@@ -76,12 +78,11 @@ const CartItem = props => {
         </div>
       </div>
     </div>
-   
   );
-}
+};
 
 CartItem.propTypes = {
-    item: PropTypes.object
-}
+  item: PropTypes.object,
+};
 
-export default CartItem
+export default CartItem;

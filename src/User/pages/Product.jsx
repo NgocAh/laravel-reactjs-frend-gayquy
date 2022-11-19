@@ -67,9 +67,9 @@ const Product = (props) => {
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, [product]);
-
   return (
     <div>
+      
       <Section>
         <SectionBody>
           <ProductView product={product}/>
