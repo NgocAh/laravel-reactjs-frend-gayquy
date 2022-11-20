@@ -85,6 +85,7 @@ const ProductView = (props) => {
     if (check()) {
       dispatch(
         addItem({
+          product_id: product.id,
           slug: product.slug,
           size: size,
           price: product.price,
