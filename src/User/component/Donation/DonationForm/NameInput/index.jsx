@@ -79,6 +79,9 @@ const NameInput = () => {
       <span>{err2}</span>
 
       <a href="/listdonate">Nhấn vào để xem danh sách các nhà hảo tâm</a>
+      <Link to="/donate">
+        <i className="bx bx-donate-heart"></i>
+      </Link>
     </fieldset>
   );
 };

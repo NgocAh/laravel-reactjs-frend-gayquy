@@ -4,6 +4,231 @@
   background: #cde4ba;
   display: flex;
   flex-direction: column;
+  &__HelpUs{
+    color: #000;
+    flex: 1;
+    &__HelpUsTitle{
+      padding-bottom: 1rem;
+      font-size: 1.6rem;
+    }
+    &__HelpUsParagraph1{
+      font-weight: 600;
+      line-height: 1.7rem;
+      text-align: justify;
+      padding-top: 1.5rem;
+    }
+    &__HelpUsParagraph2{
+      color: rgb(67, 78, 71);
+      font-weight: 600;
+      line-height: 1.7rem;
+      text-align: justify;
+      padding-top: 3rem;
+    }
+  }
+  &__Form{
+    flex: 1;
+    &__GiftFrequency {
+      margin-top: 6rem;
+
+      &__Title {
+      color: #000;
+      padding-bottom: 1.2rem;
+      font-size: 1.3rem;
+      }
+      &__Frequency {
+  padding: 0.2rem;
+  background: #4E944F;
+  border-radius: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 100%;
+  border: none;
+
+  &__RadioWrapper {
+    padding: 1.5rem 0.6rem;
+    &__Radio {
+      display: none;
+      }
+    &__Radio:checked + label {
+    background-color: #000;
+    color: #4E944F;
+    font-size: 1.2rem;
+      }
+      }
+  &__RadioWrapper label {
+  cursor: pointer;
+  color: rgb(2, 43, 18);
+  height: 90%;
+  padding: 1rem 1.4rem;
+  border-radius: 5rem;
+  transition: all ease-in-out 0.1s;
+}
+
+  &__RadioWrapper label:hover {
+  background-color: #83BD75;
+      }
+    }
+    }
+
+  &__SelectAmount {
+  margin-top: 3rem;
+    &__Title {
+  color: #000;
+  padding-bottom: 1.5rem;
+  font-size: 1.3rem;
+      }
+    &__Amounts {
+  position: relative;
+  display: grid;
+  border: none;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  row-gap: 1.6rem;
+  margin-top: 0.5rem;
+      &__RadioWrapper{
+        margin-right: 0.5rem;
+        &__Radio {
+         display: none;
+
+        }
+        &__Radio:checked + label {
+        background-color: #000;
+        color: #4E944F;
+        font-size: 1.1rem;
+        }
+        &__Radio + label {
+        cursor: pointer;
+        color: #000;
+        height: 90%;
+        border-radius: 5rem;
+        padding: 0.4rem 1rem;
+        border: 1px solid #000;
+        transition: all ease-in-out 0.1s;
+        font-weight: bold;
+        }
+        &__Radio + label:hover {
+        background-color: #cde4ba;
+        color: #000;
+        }
+
+      }
+      &__MoneyOrther{
+        position: absolute;
+        margin-right: 0.5rem;
+        top: 30px;
+        right: 10px;
+        &__Text{
+           display: block;
+          padding: 1rem;
+          border: 1.5px solid #83BD75;
+          background: #B4E197;
+          color: #000;
+          border-radius: 3px;
+        }
+      }
+      }
+    }
+  &__NameInputWrapper {
+  padding: 0;
+  margin-top: 3rem;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+
+  &__NameInput {
+  padding: 1rem;
+  border: 1.5px solid #83BD75;
+  background: #B4E197;
+  color: #000;
+  border-radius: 3px;
+      }
+  &__NameInput::placeholder {
+  color: #000;
+  opacity: 0.6;
+      }
+    }
+  &__NameInputWrapper a {
+  margin-top: 1.5rem;
+  color: #09303f;
+  text-decoration: none;
+  }
+  &__NameInputWrapper label {
+  color: #000;
+  padding-top: 1.5rem;
+  padding-bottom: 0.8rem;
+  
+    }
+  &__btn{
+    margin-top: 3rem;
+  padding: 1rem 2rem;
+  }
+  }
+}
+@media (min-width: 1200px) {
+  .Donate__HelpUs__HelpUsTitle {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .Donate__HelpUs {
+    max-width: 45%;
+  }
+  .Donate__HelpUs__HelpUsParagraph1 {
+    max-width: 90%;
+  }
+  .Donate__HelpUs__HelpUsParagraph2 {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .Donate__HelpUs {
+    max-width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .Donate__Form {
+    max-width: 45%;
+  }
+}
+
+@media (min-width: 499px) {
+  .Donate__Form__GiftFrequency__Frequency {
+    max-width: 80%;
+  }
+  .Donate__Form__GiftFrequency__Frequency__RadioWrapper {
+    padding: 1.5rem 1rem;
+  }
+  .Donate__Form__GiftFrequency__Frequency__RadioWrapper label {
+    padding: 1rem 1.9rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .Donate__Form__GiftFrequency {
+    margin-top: 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .Donate__Form__GiftFrequency {
+    margin-top: 1rem;
+  }
+  .Donate__Form__GiftFrequency__Frequency {
+    max-width: 70%;
+  }
+  .Donate__Form__GiftFrequency__Frequency__RadioWrapper label {
+    padding: 1rem 1.3rem;
+  }
+}
+
+@media (min-width: 499px) {
+  .Donate__Form__SelectAmount__Amounts {
+    grid-template-columns: repeat(5, 1fr);
+    margin-top: 0.5rem;
+  }
 }
 
 @media (min-width: 499px) {
