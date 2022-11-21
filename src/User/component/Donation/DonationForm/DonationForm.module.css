@@ -1,8 +1,0 @@
-.DonationForm {
-  flex: 1;
-}
-@media (min-width: 992px) {
-  .DonationForm {
-    max-width: 45%;
-  }
-}

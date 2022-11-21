@@ -1,11 +1,10 @@
 import React, { useCallback, useState, useEffect, useRef } from "react";
-import Grid from "../component/Grid";
-import ProductCard from "../component/ProductCard";
+// import Grid from "../component/Grid";
+// import ProductCard from "../component/ProductCard";
 import Checkbox from "../component/Checkbox";
 import InfinityList from "../component/InfinityList";
 
-// import productData from "../assets/fake-data/products";
-// import category from "../assets/fake-data/category";
+
 import size from "../assets/fake-data/product-size";
 import Button from "../component/Button";
 import axios from "axios";

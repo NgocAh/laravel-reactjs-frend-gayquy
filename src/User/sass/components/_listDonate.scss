@@ -1,0 +1,56 @@
+.ListDonate{
+  text-align: center;
+&__tittle{
+  font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  margin-top: 15px;
+  cursor: pointer;
+  color: #165e19;
+}
+&__table {
+    box-sizing: border-box;
+    width: 90%;
+    border-collapse: collapse;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+    &__thead {
+        position: sticky;
+        z-index: 100;
+       
+        &__trHead{
+          background:#B4E197;
+          
+          &__th{
+                padding: 8px;
+                color: rgb(33, 33, 33);
+                text-transform: capitalize;
+                font-weight: 600;
+                font-size: 14px;
+
+                &:not(:last-of-type) {
+                    border-right: 1px solid rgb(237, 237, 237);
+                }
+                &:first-of-type {
+                    width: 1%;
+                    white-space: nowrap;
+                }
+          }
+        }
+      
+    }
+     &__tbody{
+         
+          &__trBody{
+            background: rgb(255, 255, 255);
+
+            &__td {
+                padding: 8px;
+                border: 1px solid rgb(237, 237, 237);
+                font-size: 14px;
+            }
+          }
+        } 
+}
+}
