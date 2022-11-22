@@ -72,3 +72,20 @@
         }
     }
 }
+.row{
+    text-align:right;
+    // margin-top: -10px;
+    &__search{
+    padding: 13px;
+    border: 1.5px solid #83BD75;
+    background: #B4E197;
+    color: #000;
+    border-radius: 3px;
+    margin-top: -25px;
+    }
+    .bx-search:before {
+    content: "\eb54";
+    font-size: 30px;
+    vertical-align: middle; 
+}
+}

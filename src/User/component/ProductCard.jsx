@@ -23,7 +23,8 @@ const ProductCard = (props) => {
         </div>
         <h3 className="product-card__name">{props.name}</h3>
         <div className="product-card__price">
-          {numberWithCommas(props.price)}
+          {numberWithCommas(props.price) }
+          {/* <i>vnđ</i> */}
           {/* <span className="product-card__price__old">
             <del>{numberWithCommas(399000)}</del>
           </span> */}

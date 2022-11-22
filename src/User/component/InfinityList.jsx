@@ -55,27 +55,34 @@ const InfinityList = (props) => {
   return (
     <div ref={listRef}>
       <div className="row">
-         <label> Search:</label>
-      <input  type="text"
-              name="order"
-              onChange={(e)=> setInputSearch(e.target.value)}>
-      </input>
-      <br></br>
+        {/* <label> Search:</label> */}
+
+        <input
+          className="row__search"
+          type="text"
+          name="order"
+          placeholder="Nhập tên sản phẩm..."
+          onChange={(e) => setInputSearch(e.target.value)}
+        ></input>
+        <i className="bx bx-search"></i>
+        <br></br>
       </div>
       <br></br>
       <br></br>
-      
+
       <Grid col={3} mdCol={2} smCol={1} gap={20}>
-        {data.filter((data)=>data.title.toLowerCase().includes(inputSearch)).map((item, index) => (
-          <ProductCard
-            key={index}
-            img01={item.image01}
-            img02={item.image02}
-            name={item.title}
-            price={Number(item.price)}
-            slug={item.slug}
-          />
-        ))}
+        {data
+          .filter((data) => data.title.toLowerCase().includes(inputSearch))
+          .map((item, index) => (
+            <ProductCard
+              key={index}
+              img01={item.image01}
+              img02={item.image02}
+              name={item.title}
+              price={Number(item.price)}
+              slug={item.slug}
+            />
+          ))}
       </Grid>
     </div>
   );

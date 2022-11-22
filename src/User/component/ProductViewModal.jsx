@@ -8,10 +8,10 @@ import Button from './Button';
 import { remove } from '../redux/product-modal/productModalSlice';
 import axios from "axios";
 
-// import productData from '../assets/fake-data/products'
+
 
 const ProductViewModal = (props) => {
-  ///
+
   const [produclist, setproductlist] = useState([]);
 
   var products=[];
