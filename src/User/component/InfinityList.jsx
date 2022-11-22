@@ -15,6 +15,7 @@ const InfinityList = (props) => {
 
   const [index, setIndex] = useState(0);
 
+  const [inputSearch, setInputSearch]=useState("");
 
   useEffect(() => {
     setData(props.data.slice(0, perLoad));
@@ -53,8 +54,19 @@ const InfinityList = (props) => {
   }, [load, index, data, props.data]);
   return (
     <div ref={listRef}>
+      <div className="row">
+         <label> Search:</label>
+      <input  type="text"
+              name="order"
+              onChange={(e)=> setInputSearch(e.target.value)}>
+      </input>
+      <br></br>
+      </div>
+      <br></br>
+      <br></br>
+      
       <Grid col={3} mdCol={2} smCol={1} gap={20}>
-        {data.map((item, index) => (
+        {data.filter((data)=>data.title.toLowerCase().includes(inputSearch)).map((item, index) => (
           <ProductCard
             key={index}
             img01={item.image01}

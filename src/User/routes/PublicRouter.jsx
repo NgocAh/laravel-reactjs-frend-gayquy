@@ -7,9 +7,6 @@ import Checkout from '../pages/Checkout'
 import Donate from '../pages/Donate'
 import ListDonate from '../pages/ListDonate'
 
-
-
-
 const PublicRouter = [
   { path: "/", component: Home },
   { path: "/catalog", component: Catalog },

@@ -145,6 +145,10 @@ const [products, setProducts] = useState(productList);
 
   return (
     <div>
+      <br></br>
+   
+      <br></br>
+
       <div className="catalog">
         <div className="catalog__filter" ref={filterRef}>
           {/* nút close danh mục khi responsive */}
