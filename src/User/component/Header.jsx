@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 
 import { Link, useLocation } from "react-router-dom";
+import { Icon } from "@iconify/react";
 
 import logo from "../assets/images/Logo-2.png";
 
@@ -85,9 +86,9 @@ const Header = () => {
               </Link>
             </div>
             <div className="header__menu__item header__menu__right__item">
-              <i className="bx bx-search"></i>
-              <input type="text" placeholder="Search..." className="form-control" />
-                   
+              <Link to="/checkOder">
+                <Icon icon="material-symbols:edit-calendar-rounded" />
+              </Link>
             </div>
 
             <div className="header__menu__item header__menu__right__item">

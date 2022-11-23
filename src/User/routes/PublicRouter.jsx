@@ -8,6 +8,7 @@ import Donate from '../pages/Donate'
 import ListDonate from '../pages/ListDonate'
 import Stories from '../pages/Stories'
 import SinglePost from '../component/SinglePost'
+import CheckOrder from '../component/CheckOrder'
 
 const PublicRouter = [
   { path: "/", component: Home },
@@ -19,6 +20,7 @@ const PublicRouter = [
   { path: "/listdonate", component: ListDonate },
   { path: "/stories", component: Stories },
   { path: "/stories/singlePost", component: SinglePost },
+  { path: "/checkOder", component: CheckOrder },
 ];
 
 

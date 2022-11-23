@@ -21,9 +21,9 @@ const Stories = () => {
           <Post />
           <Post />
           <Post />
+          {/* <Post />
           <Post />
-          <Post />
-          <Post />
+          <Post /> */}
           
         </div>
         {/* <div className="Stories__blog__sidebar">
