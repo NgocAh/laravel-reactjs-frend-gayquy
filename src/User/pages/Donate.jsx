@@ -62,6 +62,11 @@ const submitDonors = (e) => {
 
 
   return (
+    <div>
+        <br></br>
+        <br></br>
+        <br></br>
+
     <div className="Donate">
       <section className="Donate__HelpUs">
         <header className="Donate__HelpUs__HelpUsTitle">
@@ -247,6 +252,8 @@ const submitDonors = (e) => {
       </div>
       {/* <DonationForm /> */}
     </div>
+    </div>
+
   );
 };
 

@@ -65,12 +65,25 @@ else
   // const keys = Object.keys(data[0]);
   return (
     <div className="ListDonate">
-        <label>Search :</label>
-                <input 
+     <div className="row">
+        {/* <label> Search:</label> */}
+      <br></br>
+        <input
+          className="row__search"
+          type="text"
+          name="order"
+          placeholder="Nhập tên sản phẩm..."
+          onChange={(e)=> setInput(e.target.value)}
+        ></input>
+        <i className="bx bx-search"></i>
+        <br></br>
+      </div>
+  
+                {/* <input 
                     type="text"
                     name="order"
                     onChange={(e)=> setInput(e.target.value)}
-                ></input>
+                ></input> */}
       <div className="ListDonate__tittle">
         <span>Danh sách quyên góp</span>
       </div>

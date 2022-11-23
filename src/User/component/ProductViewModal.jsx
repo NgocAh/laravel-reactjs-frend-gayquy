@@ -8,8 +8,6 @@ import Button from './Button';
 import { remove } from '../redux/product-modal/productModalSlice';
 import axios from "axios";
 
-
-
 const ProductViewModal = (props) => {
 
   const [produclist, setproductlist] = useState([]);
