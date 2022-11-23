@@ -1,0 +1,131 @@
+.Stories{
+    
+    &__header{
+        margin-top: 60px;
+
+        &__headerTitles{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: "Lora", serif;
+            color: #496e4a;
+            &__headerTitleSm {
+            position: absolute;
+            top: 180px;
+            font-size: 25px;
+            }
+            &__headerTitleLg {
+            position: absolute;
+            top: 210px;
+            font-size: 100px;
+            }
+        }
+        &__headerImg {
+            width: 100%;
+            height: 450px;
+            margin-top: 50px;
+            object-fit: cover;
+        }
+    }
+    &__blog{
+        display: flex;
+        &__posts{
+        flex: 9;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 30px;
+        margin-left: 80px;
+        }
+    }
+    
+}
+
+.post {
+  width: 385px;
+  margin: 0px 25px 40px 25px;
+  display: flex;
+  flex-direction: column;
+
+  &__postImg {
+  width: 385px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 7px;
+    }
+    &__postInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__postTitle {
+  font-family:'Courier New', Courier, monospace;
+  font-size: 24px;
+  font-weight: 900;
+  margin-top: 15px;
+  cursor: pointer;
+  color: #165e19;
+    }
+    &__postDate {
+  font-family: "Lora", serif;
+  font-style: italic;
+  font-size: 13px;
+  font-weight: 400;
+  color: #999999;
+  margin-top: 15px;
+    }
+}
+&__postDesc {
+  font-family: "Varela Round", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #444444;
+  margin-top: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+}
+
+.singlePost{
+    &__singlePostWrapper {
+  padding: 20px;
+  padding-right: 0;
+
+  &__singlePostImg {
+  width: 100%;
+  height: 300px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+    &__singlePostTitle {
+  text-align: center;
+  margin: 10px;
+  font-size: 35px;
+  font-family: "Lora", sans-serif;
+}
+    &__singlePostInfo {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  color: #be9656;
+  font-family: "Varela Round", Arial, Helvetica, sans-serif;
+  font-style: italic;
+}
+    &__singlePostDesc {
+  color: #666;
+  font-size: 18px;
+  line-height: 25px;
+  
+}
+    &__singlePostDesc::first-letter {
+  margin-left: 20px;
+  font-size: 30px;
+  font-weight: 600;
+}
+}
+}

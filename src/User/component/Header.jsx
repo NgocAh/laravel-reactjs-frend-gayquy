@@ -3,6 +3,7 @@ import React, { useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import logo from "../assets/images/Logo-2.png";
+import { Icon } from "@iconify/react";
 
 const mainNav = [
   {
@@ -82,6 +83,11 @@ const Header = () => {
             <div className="header__menu__item header__menu__right__item">
               <Link to="/donate">
                 <i className="bx bx-donate-heart"></i>
+              </Link>
+            </div>
+            <div className="header__menu__item header__menu__right__item">
+              <Link to="/check-order">
+                <Icon icon="material-symbols:edit-calendar-rounded" />
               </Link>
             </div>
           

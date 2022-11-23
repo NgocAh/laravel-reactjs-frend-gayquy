@@ -1,0 +1,86 @@
+
+.CheckOrder{
+    width: 100%;
+    max-width: 100%;
+    padding: 40px;
+    margin: 0 30px;
+    position: relative;
+
+    &__title{
+        text-align:center;
+        text-transform: uppercase;
+        color: #1c4b10;
+    }
+
+    &__track{
+        margin: 4em 0 8em;
+        text-align:center;
+        &__search{
+        margin-bottom: 30px;
+            &__ID{
+                padding: 8px;
+                font-size: 1rem;
+                border: 1.5px solid #83BD75;
+                background: #B4E197;
+                color: #000;
+                border-radius: 3px;
+                margin-top: -25px;
+            }
+            
+        }
+        &__TablleCheck{
+            
+        &__table{
+        margin-top: 30px;
+        box-sizing: border-box;
+        width: 70%;
+        margin: 0 auto;
+        border-collapse: collapse;
+        
+        border-radius: 8px;
+        overflow: hidden;
+        &__thead {
+        // position: sticky;
+        // z-index: 100;
+       
+        &__trHead{
+          background:#B4E197;
+          
+          &__th{
+                padding: 8px;
+                color: rgb(33, 33, 33);
+                text-transform: capitalize;
+                font-weight: 600;
+                font-size: 14px;
+                text-align:center;
+
+                &:not(:last-of-type) {
+                    border-right: 1px solid rgb(237, 237, 237);
+                }
+                &:first-of-type {
+                    width: 1%;
+                    white-space: nowrap;
+                }
+          }
+        }
+      
+    }
+     &__tbody{
+         
+          &__trBody{
+            background: rgb(255, 255, 255);
+
+            &__td {
+                padding: 8px;
+                border: 1px solid rgb(237, 237, 237);
+                font-size: 14px;
+            }
+          }
+        } 
+    }
+    }
+    }
+    
+    
+
+}

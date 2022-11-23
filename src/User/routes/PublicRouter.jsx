@@ -6,6 +6,9 @@ import Product from '../pages/Product'
 import Checkout from '../pages/Checkout'
 import Donate from '../pages/Donate'
 import ListDonate from '../pages/ListDonate'
+import Stories from '../pages/Stories'
+import SinglePost from '../component/SinglePost'
+import CheckOrder from '../component/CheckOrder'
 
 const PublicRouter = [
   { path: "/", component: Home },
@@ -15,6 +18,10 @@ const PublicRouter = [
   { path: "/checkout", component: Checkout },
   { path: "/donate", component: Donate },
   { path: "/listdonate", component: ListDonate },
+  { path: "/stories", component: Stories },
+  { path: "/stories/:slug", component: SinglePost },
+  { path: "/check-order", component: CheckOrder },
+
 ];
 
 
