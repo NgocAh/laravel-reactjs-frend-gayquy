@@ -5,8 +5,8 @@ const policy = [
         icon: "bx bx-shopping-bag"
     },
     {
-        name: "Thanh toán COD",
-        description: "Thanh toán khi nhận hàng (COD)",
+        name: "Theo dõi đơn hàng",
+        description: "Theo dõi theo hình thức tra mã",
         icon: "bx bx-credit-card"
     },
     {
