@@ -5,6 +5,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import swal from "sweetalert2";
 import Button from './Button';
 function CheckOrder () {
+  document.title = "Trạng thái đơn hàng";
   const params = useParams();
   const [loading, setLoading] = useState(true);
 

@@ -65,7 +65,7 @@ const submitDonors = (e) => {
     <div className="Donate">
       <section className="Donate__HelpUs">
         <header className="Donate__HelpUs__HelpUsTitle">
-          <h1>Help us do more</h1>
+          <h1>Chút yêu thương cho đời thêm ngọt</h1>
         </header>
         <p className="Donate__HelpUs__HelpUsParagraph1">
           Là những con người trẻ sống trong thế kỉ công nghệ thông tin phát
@@ -87,17 +87,14 @@ const submitDonors = (e) => {
         </p>
       </section>
       <div className="Donate__Form">
-
         <div className="Donate__Form__GiftFrequency">
-
           <header className="Donate__Form__GiftFrequency__Title">
             <h4>Tần suất hỗ trợ</h4>
           </header>
-          
         </div>
 
         <form onSubmit={submitDonors}>
-        <fieldset className="Donate__Form__GiftFrequency__Frequency">
+          <fieldset className="Donate__Form__GiftFrequency__Frequency">
             <div className="Donate__Form__GiftFrequency__Frequency__RadioWrapper">
               <input
                 className="Donate__Form__GiftFrequency__Frequency__RadioWrapper__Radio"
@@ -106,7 +103,6 @@ const submitDonors = (e) => {
                 name="frequency"
                 value="0"
                 onChange={handleChange}
-                // onChange={handleInput} checked={donateInput.frequency}
                 defaultChecked
               />
               <label htmlFor="monthly">MỖI THÁNG</label>
@@ -118,148 +114,136 @@ const submitDonors = (e) => {
                 id="one-time"
                 value="1"
                 onChange={handleChange}
-                // onChange={handleInput} checked={donateInput.frequency}
                 name="frequency"
               />
               <label htmlFor="one-time">MỘT LẦN</label>
             </div>
           </fieldset>
 
-        <div className="Donate__Form__SelectAmount">
-          <header className="Donate__Form__SelectAmount__Title">
-            <h4>Chọn số tiền muốn ủng hộ (nghìn VNĐ)</h4>
-          </header>
+          <div className="Donate__Form__SelectAmount">
+            <header className="Donate__Form__SelectAmount__Title">
+              <h4>Chọn số tiền muốn ủng hộ (nghìn VNĐ)</h4>
+            </header>
 
-
-          <fieldset className="Donate__Form__SelectAmount__Amounts">
-            <div className="Donate__Form__SelectAmount__Amounts__RadioWrapper">
-              <input
-                defaultChecked
-                className="Donate__Form__SelectAmount__Amounts__RadioWrapper__Radio"
-                type="radio"
-                name="amount"
-                id="100"
-                value="100"
-                onClick={() => setIsMoneyOrther(false)}
-                onChange={handleChangeMoney}
-
-                // value={monney100}
-                // onChange={(e) => set100(e.target.value)}
-              />
-              <label htmlFor="100">100</label>
-            </div>
-            <div className="Donate__Form__SelectAmount__Amounts__RadioWrapper">
-              <input
-                className="Donate__Form__SelectAmount__Amounts__RadioWrapper__Radio"
-                type="radio"
-                name="amount"
-                id="200"
-                value="200"
-                onClick={() => setIsMoneyOrther(false)}
-                onChange={handleChangeMoney}
-
-                // value={monney200}
-                // onChange={(e) => set200(e.target.value)}
-              />
-              <label htmlFor="200">200</label>
-            </div>
-            <div className="Donate__Form__SelectAmount__Amounts__RadioWrapper">
-              <input
-                className="Donate__Form__SelectAmount__Amounts__RadioWrapper__Radio"
-                type="radio"
-                name="amount"
-                id="500"
-                value="500"
-
-                onClick={() => setIsMoneyOrther(false)}
-                onChange={handleChangeMoney}
-
-                // value={monney500}
-                // onChange={(e) => set500(e.target.value)}
-              />
-              <label htmlFor="500">500</label>
-            </div>
-            <div className="Donate__Form__SelectAmount__Amounts__RadioWrapper">
-              <input
-                className="Donate__Form__SelectAmount__Amounts__RadioWrapper__Radio"
-                type="radio"
-                name="amount"
-                id="1000"
-                value="1000"
-                onClick={() => setIsMoneyOrther(false)}
-                onChange={handleChangeMoney}
-
-                // value={monney1000}
-                // onChange={(e) => set1000(e.target.value)}
-              />
-              <label htmlFor="1000">1000</label>
-            </div>
-            <div className="Donate__Form__SelectAmount__Amounts__RadioWrapper">
-              <input
-                className="Donate__Form__SelectAmount__Amounts__RadioWrapper__Radio"
-                type="radio"
-                name="amount"
-                id="other"
-                onClick={() => setIsMoneyOrther(true)}
-              />
-              <label htmlFor="other">Khác</label>
-            </div>
-
-            {isMoneyOrther ? (
-              <div className="Donate__Form__SelectAmount__Amounts__MoneyOrther">
+            <fieldset className="Donate__Form__SelectAmount__Amounts">
+              <div className="Donate__Form__SelectAmount__Amounts__RadioWrapper">
                 <input
                   defaultChecked
-                  className="Donate__Form__SelectAmount__Amounts__MoneyOrther__Text"
-                  type="text"
+                  className="Donate__Form__SelectAmount__Amounts__RadioWrapper__Radio"
+                  type="radio"
                   name="amount"
-                  value={numberMoney}
-                 onChange={handleChangeMoney} 
+                  id="100"
+                  value="100"
+                  onClick={() => setIsMoneyOrther(false)}
+                  onChange={handleChangeMoney}
+
+                  // value={monney100}
+                  // onChange={(e) => set100(e.target.value)}
                 />
+                <label htmlFor="100">100</label>
               </div>
-            ) : (
-              ""
-            )}
+              <div className="Donate__Form__SelectAmount__Amounts__RadioWrapper">
+                <input
+                  className="Donate__Form__SelectAmount__Amounts__RadioWrapper__Radio"
+                  type="radio"
+                  name="amount"
+                  id="200"
+                  value="200"
+                  onClick={() => setIsMoneyOrther(false)}
+                  onChange={handleChangeMoney}
+                />
+                <label htmlFor="200">200</label>
+              </div>
+              <div className="Donate__Form__SelectAmount__Amounts__RadioWrapper">
+                <input
+                  className="Donate__Form__SelectAmount__Amounts__RadioWrapper__Radio"
+                  type="radio"
+                  name="amount"
+                  id="500"
+                  value="500"
+                  onClick={() => setIsMoneyOrther(false)}
+                  onChange={handleChangeMoney}
+                />
+                <label htmlFor="500">500</label>
+              </div>
+              <div className="Donate__Form__SelectAmount__Amounts__RadioWrapper">
+                <input
+                  className="Donate__Form__SelectAmount__Amounts__RadioWrapper__Radio"
+                  type="radio"
+                  name="amount"
+                  id="1000"
+                  value="1000"
+                  onClick={() => setIsMoneyOrther(false)}
+                  onChange={handleChangeMoney}
+                />
+                <label htmlFor="1000">1000</label>
+              </div>
+              <div className="Donate__Form__SelectAmount__Amounts__RadioWrapper">
+                <input
+                  className="Donate__Form__SelectAmount__Amounts__RadioWrapper__Radio"
+                  type="radio"
+                  name="amount"
+                  id="other"
+                  onClick={() => setIsMoneyOrther(true)}
+                />
+                <label htmlFor="other">Khác</label>
+              </div>
+
+              {isMoneyOrther ? (
+                <div className="Donate__Form__SelectAmount__Amounts__MoneyOrther">
+                  <input
+                    defaultChecked
+                    className="Donate__Form__SelectAmount__Amounts__MoneyOrther__Text"
+                    type="text"
+                    name="amount"
+                    value={numberMoney}
+                    onChange={handleChangeMoney}
+                  />
+                </div>
+              ) : (
+                ""
+              )}
+            </fieldset>
+          </div>
+
+          <fieldset className="Donate__Form__NameInputWrapper">
+            <label htmlFor="name-input">Họ và tên:</label>
+            <input
+              className="Donate__Form__NameInputWrapper__NameInput"
+              name="name"
+              type="text"
+              id="name-input"
+              placeholder="Họ và tên"
+              onChange={handleInput}
+              value={donateInput.name}
+            />
+
+            <label htmlFor="donate-email">Email:</label>
+            <input
+              className="Donate__Form__NameInputWrapper__NameInput"
+              type="email"
+              name="email"
+              id="donate-email"
+              placeholder="Email"
+              onChange={handleInput}
+              value={donateInput.email}
+            />
+
+            <Link to="/listdonate">
+              Nhấn vào để xem danh sách các nhà hảo tâm
+            </Link>
           </fieldset>
-        </div>
-
-        <fieldset className="Donate__Form__NameInputWrapper">
-          <label htmlFor="name-input">Họ và tên:</label>
-          <input
-            className="Donate__Form__NameInputWrapper__NameInput"
-            name="name"
-            type="text"
-            id="name-input"
-            placeholder="Họ và tên"
-            onChange={handleInput} value={donateInput.name}
-          />
-
-          <label htmlFor="donate-email">Email:</label>
-          <input
-            className="Donate__Form__NameInputWrapper__NameInput"
-            type="email"
-            name="email"
-            id="donate-email"
-            placeholder="Email"
-            onChange={handleInput} value={donateInput.email}
-          />
-
-          <Link to="/listdonate">
-            Nhấn vào để xem danh sách các nhà hảo tâm
-          </Link>
-        </fieldset>
-        <div className="Donate__Form__btn">
-          <Button
-            size="block"
-            type="submit"
-            animate={true}
-            icon="bx bx-search"
-          >
-            Ủng hộ ngay
-          </Button>
-          
-        </div>
-
-        </form>        
+          <div className="Donate__Form__btn">
+            <Button
+              size="block"
+              type="submit"
+              animate={true}
+              icon="bx bx-donate-heart"
+            >
+              Ủng hộ ngay
+            </Button>
+          </div>
+        </form>
       </div>
       {/* <DonationForm /> */}
     </div>

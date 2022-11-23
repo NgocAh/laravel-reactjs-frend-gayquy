@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 function ListDonate () {
+  document.title = "Danh sách quyên góp";
   const [loading, setLoading] = useState(true);
   const [input,setInput]=useState("");
   const [viewDonor, setDonor] = useState([])

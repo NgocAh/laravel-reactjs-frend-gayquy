@@ -8,6 +8,7 @@ import ReactHtmlParser from 'html-react-parser';
 
 
 function Stories  () {
+  document.title = "Nụ Cười Sáng - Những câu chuyện"; 
   const [blog, setBlog] = useState([]);
   const [loading, setLoading] = useState(true);
 
