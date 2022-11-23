@@ -52,18 +52,18 @@ const Footer = () => {
             <div className="footer__title">Tổng đài hỗ trợ</div>
             <div className="footer__content">
               <p>
-                Liên hệ đặt hàng <strong>0123456789</strong>
+                Liên hệ đến tổ chức <strong>0941402932</strong>
               </p>
               <p>
-                Thắc mắc đơn hàng <strong>0123456789</strong>
+                Thắc mắc <strong>0941402932</strong>
               </p>
               <p>
-                Góp ý, khiếu nại <strong>0123456789</strong>
+                Góp ý, khiếu nại <strong>0941402932</strong>
               </p>
             </div>
           </div>
           <div>
-            <div className="footer__title">Về Yolo</div>
+            <div className="footer__title">Về Nụ Cười Sáng</div>
             <div className="footer__content">
               {footerAboutLinks.map((item, index) => (
                 <p key={index}>
@@ -89,9 +89,10 @@ const Footer = () => {
               </Link>
             </p>
             <p>
-              Hướng đến mục tiêu mang lại niềm vui ăn mặc mới mỗi ngày cho hàng
-              triệu người tiêu dùng Việt. Hãy cùng Yolo hướng đến một cuộc sống
-              năng động, tích cực hơn.
+              Nụ Cười Sáng là nền tảng giúp bạn dễ dàng chung tay quyên góp tiền
+              cùng hàng triệu người, giúp đỡ các hoàn cảnh khó khăn trên khắp cả
+              nước. Hãy cũng Nụ Cười Sáng trao đi những yêu thương, tạo nên
+              nhiều giá trị cho cuộc sống
             </p>
           </div>
         </Grid>
