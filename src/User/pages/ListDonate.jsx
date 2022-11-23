@@ -34,7 +34,7 @@ const data = [
 ];
 
 const ListDonate = ({ data }) => {
-  // const keys = Object.keys(data[0]);
+  document.title = "Danh sách quyên góp";
   return (
     <div className="ListDonate">
       <div className="ListDonate__tittle">

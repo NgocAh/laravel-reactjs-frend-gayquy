@@ -3,6 +3,7 @@ import Post from '../component/Post';
 import imgblog from "../assets/images/imgblog.jpg";
 
 const Stories = () => {
+  document.title = "Nụ Cười Sáng - Những câu chuyện";
   return (
     <div className="Stories">
       <div className="Stories__header">

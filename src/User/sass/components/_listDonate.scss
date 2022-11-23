@@ -1,12 +1,16 @@
 .ListDonate{
   text-align: center;
 &__tittle{
-  font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+  // font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
   font-size: 24px;
   font-weight: 900;
   margin-top: 15px;
-  cursor: pointer;
-  color: #165e19;
+  // cursor: pointer;
+  // text-align:center;
+  text-transform: uppercase;
+  color: #1c4b10;
+  line-height: 70px;
+  // color: #165e19;
 }
 &__table {
     box-sizing: border-box;
@@ -15,6 +19,7 @@
     text-align: center;
     border-radius: 8px;
     overflow: hidden;
+    margin: 0 auto;
     &__thead {
         position: sticky;
         z-index: 100;

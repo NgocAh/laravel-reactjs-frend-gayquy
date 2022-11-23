@@ -12,7 +12,7 @@ const Donate = () => {
     <div className="Donate">
       <section className="Donate__HelpUs">
         <header className="Donate__HelpUs__HelpUsTitle">
-          <h1>Help us do more</h1>
+          <h1>Chút yêu thương cho đời thêm ngọt</h1>
         </header>
         <p className="Donate__HelpUs__HelpUsParagraph1">
           Là những con người trẻ sống trong thế kỉ công nghệ thông tin phát
@@ -161,11 +161,7 @@ const Donate = () => {
           </Link>
         </fieldset>
         <div className="Donate__Form__btn">
-          <Button
-            size="block"
-            animate={true}
-            icon="bx bx-search"
-          >
+          <Button size="block" animate={true} icon="bx bx-donate-heart">
             Ủng hộ ngay
           </Button>
         </div>

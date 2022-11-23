@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from './Button';
 const CheckOrder = () => {
+  document.title = "Trạng thái đơn hàng";
   return (
     <div className="CheckOrder">
       <div className="CheckOrder__title">
