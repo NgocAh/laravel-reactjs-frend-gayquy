@@ -70,6 +70,7 @@ const Product = (props) => {
 
   return (
     <div>
+      <br></br>
       <Section>
         <SectionBody>
           <ProductView product={product}/>
